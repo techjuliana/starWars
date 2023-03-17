@@ -1,30 +1,43 @@
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
+export default function CardFilmes() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [film, setFilm] = useState([]);
 
-export async function getStaticProps() {
-  const response = fetch(`https://swapi.dev/api/films/`);
-  const film = response.json();
-  // console.log("testeeee",  film);
-  return {
-    props: {film}
-   }
+  useEffect(() => {
+    fetch("https://swapi.dev/api/films/")
+      .then((res) => res.json())
+      .then(
+        (data) => {
+          setIsLoaded(true);
+          setFilm(data.results);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Carregando...</div>;
+  } else {
+    return (
+      <div>
+        {film.map((item) => (
+          <div>
+            <div>
+              <h3>{item.title}</h3>
+            </div>
+            <img
+              src={`https://starwars-visualguide.com/assets/img/films/${item.episode_id}.jpg`}
+              width="250px"
+              height="290px"
+            />
+          </div>
+        ))}
+      </div>
+    );
   }
-
-export default function CardFilmes({film}) {
-  return (
-    <div>
-    <ul>
-    {film?.map((film) => (
-      <li key={film?.id}>
-      <h3>{film?.title}</h3>
-      <Image
-        src={`https://starwars-visualguide.com/assets/img/films/${film?.id}.jpg`}
-        width="200"
-        height="200"
-        alt={film?.title}
-      />
-      </li>
-    ))}
-    </ul>
-    </div>
-  );
 }
