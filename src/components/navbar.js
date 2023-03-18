@@ -3,7 +3,7 @@ export default function Navbar() {
   return (
     <>
       <h1>imagem</h1>
-      <Link href="/filmesLista">
+      <Link href="/">
           <h1>Filmes</h1>
         </Link>
         <Link href="/sobre">

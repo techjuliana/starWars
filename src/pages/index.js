@@ -1,11 +1,11 @@
-import Link from "next/link";
+import CardFilmes from "@/components/cardFilmes";
+import Navbar from "@/components/navbar";
 export default function Home() {
   return (
     <>
       <h1>home</h1>
-      <Link href="/filmesLista/detalhesFilme">
-        <h1>detalhes filme + COMPONENTES</h1>
-      </Link>
+      <Navbar/>
+      <CardFilmes/>
     </>
   );
 }
