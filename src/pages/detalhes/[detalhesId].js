@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export const getStaticProps = async (context) => {
   const id = context.params.detalheId;
 
-  const res = await fetch(`https://swapi.dev/api/films/${id}`);
+  const res = await fetch(`https://swapi.dev/api/films/${id}/`);
 
   const data = await res.json();
 
@@ -12,17 +12,17 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export default function Detalhes({ item }) {
-  // const id = context.params.detalheId
-  // const [film, setFilm] = useState([]);
+export default function Detalhes ()  {
+//   const id = context.params.detalheId
+//   const [item, setItem] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`https://swapi.dev/api/films/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setFilm(data.results);
-  //     });
-  // }, []);
+//   useEffect(() => {
+//     fetch(`https://swapi.dev/api/films/${id}`)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setItem(data.results);
+//       });
+//   }, []);
 
   return (
     <div>
@@ -43,6 +43,17 @@ export default function Detalhes({ item }) {
             </Link>
           </div>
         ))}
+      </div>
+
+      <div>
+        <h2>Personagens:</h2>
+        <ul>
+          <img
+            src={`https://starwars-visualguide.com/assets/img/films/${item.characters}.jpg`}
+            width="250px"
+            height="290px"
+          />
+        </ul>
       </div>
     </div>
   );

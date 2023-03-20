@@ -1,10 +1,11 @@
 export default function Sobre() {
   return (
     <>
-      <h1>Sobre o projeto</h1>
+      <h1>About the project</h1>
+      <h3>Developed by Juliana Bitencourt</h3>
       <p>
-        StarWars Page é um App construído em Next.js para consultar filmes e
-        atores desa saga.
+        StarWars Page is an App built on Next.js to consult movies and actors of
+        this saga.
       </p>
     </>
   );

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import * as S from "./styled";
+
 export default function CardFilmes() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,26 +27,26 @@ export default function CardFilmes() {
     return <div>Carregando...</div>;
   } else {
     return (
-      <div>
-        <div>
-          {film.map((item) => (
-            <div>
-              <div>
-                <h3>{item.title}</h3>
-              </div>
+      <S.CardContainer>
+        <S.Grid>
+          {film.map((item, index) => (
+            <S.Card key={index}>
+              <h3>{item.title}</h3>
               <img
                 src={`https://starwars-visualguide.com/assets/img/films/${item.episode_id}.jpg`}
                 width="250px"
                 height="290px"
               />
               <p>{item.opening_crawl}</p>
-              <Link href={`/detalhes/${item.episode_id}`}>
-                <h1>Ver detalhes</h1>
-              </Link>
-            </div>
+              <S.ContainerBtn>
+                <Link href={`detalhes/${item.episode_id}`}>
+                  <h1>Ver detalhes</h1>
+                </Link>
+              </S.ContainerBtn>
+            </S.Card>
           ))}
-        </div>
-      </div>
+        </S.Grid>
+      </S.CardContainer>
     );
   }
 }
