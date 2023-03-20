@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const ContainerBtn = styled.button`
-  display: flex;
-  justify-content: center;
-  justify-content: center;
-  /* background: none; */
-  padding: 0.8rem 0;
+  background: #000;
+  color: #f7e926;
+  padding: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.6rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  width: 100%;
 `;
 
 export const CardContainer = styled.div`
@@ -20,10 +20,14 @@ export const CardContainer = styled.div`
 `;
 
 export const Card = styled.div`
+  justify-content: center;
+  background: #f7e926;
+  color: black;
   margin: 1rem;
-  border-radius: 20px;
-  padding: 0.5rem;
+  border-radius: 10px;
+  padding: 1rem;
   max-width: 18rem;
+  text-align: center;
   box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%),
     0 25px 10px -24px rgb(5 5 5 / 10%);
 `;

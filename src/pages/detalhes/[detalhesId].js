@@ -1,16 +1,14 @@
 import React from "react";
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const id = context.params.detalheId;
-
-  const res = await fetch(`https://swapi.dev/api/films/${id}/`);
-
+  const res = await fetch(`https://swapi.dev/api/films/${id}`);
   const data = await res.json();
-
   return {
     props: { item: data.results },
   };
 };
+
 
 export default function Detalhes ()  {
 //   const id = context.params.detalheId
@@ -45,7 +43,7 @@ export default function Detalhes ()  {
         ))}
       </div>
 
-      <div>
+      {/* <div>
         <h2>Personagens:</h2>
         <ul>
           <img
@@ -54,7 +52,7 @@ export default function Detalhes ()  {
             height="290px"
           />
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

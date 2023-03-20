@@ -40,7 +40,7 @@ export default function CardFilmes() {
               <p>{item.opening_crawl}</p>
               <S.ContainerBtn>
                 <Link href={`detalhes/${item.episode_id}`}>
-                  <h1>Ver detalhes</h1>
+                  <h3>Details</h3>
                 </Link>
               </S.ContainerBtn>
             </S.Card>
