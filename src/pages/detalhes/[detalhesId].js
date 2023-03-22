@@ -5,21 +5,20 @@ import React from "react";
 export default function Detalhes() {
   const route = useRouter();
   const { detalhesId } = route.query;
-  console.log(detalhesId, "testeee");
-
+  // console.log(route, "testeee");
   return (
     <div>
       <div>
         <div>
           <div>
-            <h3>{detalhesId.title}</h3>
+            <h3>{detalhesId?.title}</h3>
           </div>
-          {/* <img
-              src={`https://starwars-visualguide.com/assets/img/films/${item.episode_id}.jpg`}
-              width="250px"
-              height="290px"
-            />
-            <p>{item.opening_crawl}</p> */}
+          <img
+            src={`https://starwars-visualguide.com/assets/img/films/${detalhesId?.episode_id}.jpg`}
+            width="250px"
+            height="290px"
+          />
+          <p>{detalhesId?.opening_crawl}</p>
           <Link href="/">
             <h1>Voltar</h1>
           </Link>
