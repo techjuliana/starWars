@@ -1,10 +1,8 @@
-import Link from "next/link";
 import * as S from "./styled";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 export default function Detalhes() {
   const [film, setFilm] = useState([]);
-  const [ator, setAtor] = useState([]);
   const route = useRouter();
   const { detalhesId } = route.query;
 
