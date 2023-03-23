@@ -25,9 +25,7 @@ export default function CardFilmes() {
             />
             <h>director: {item.director} </h>
             <S.ContainerBtn>
-              <Link href={`detalhes/${item.episode_id}`}>
-                <h3>Details</h3>
-              </Link>
+              <Link href={`detalhes/${item.episode_id}`}>Details</Link>
             </S.ContainerBtn>
           </S.Card>
         ))}
