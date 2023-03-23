@@ -8,8 +8,8 @@ export default function Navbar() {
       <div className={styles.logo}>
         <Image
           src="/images/logo.png"
-          width="180"
-          height="100"
+          width="80"
+          height="80"
           alt="Star Wars"
         />
       </div>

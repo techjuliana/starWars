@@ -23,7 +23,7 @@ export default function CardFilmes() {
               width="250px"
               height="290px"
             />
-            <p>{item.opening_crawl}</p>
+            <h>director: {item.director} </h>
             <S.ContainerBtn>
               <Link href={`detalhes/${item.episode_id}`}>
                 <h3>Details</h3>
