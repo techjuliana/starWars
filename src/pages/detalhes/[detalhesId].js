@@ -1,20 +1,20 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-
 export default function Detalhes() {
   const route = useRouter();
   const { detalhesId } = route.query;
-  // console.log(route, "testeee");
+  // const { title } = route.query;
+  console.log(detalhesId, "testeee");
   return (
     <div>
       <div>
         <div>
           <div>
-            <h3>{detalhesId?.title}</h3>
+            <h3>{detalhesId}</h3>
           </div>
           <img
-            src={`https://starwars-visualguide.com/assets/img/films/${detalhesId?.episode_id}.jpg`}
+            src={`https://starwars-visualguide.com/assets/img/films/${detalhesId}.jpg`}
             width="250px"
             height="290px"
           />
